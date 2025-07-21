@@ -22,8 +22,8 @@ A simple and aesthetic Arduino project that reads **temperature** and **humidity
 - 🖥️ OLED display with environmental status
 - 🚦 LED alerts:
   - 🟢 Green = Ideal
-  - 🔴 Red = Alert (Temp/Humidity issue)
-  - ⚠️ Blue = Unusual condition
+  - ⚠️ Yellow = Alert 
+  - 🔴 RED = Unusual condition (Temp/Humidity issue)
 - 🔁 Continuous looping with error handling
 - 📦 Clean, modular structure using a custom `.h` file
 
