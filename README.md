@@ -1,54 +1,62 @@
-🌡️ DHT11 Temperature & Humidity Display with OLED and LED Alerts
-This Arduino-based project is a compact environmental monitoring system that reads real-time temperature and humidity from a DHT11 sensor, and displays the results on a 0.96" OLED screen (SSD1306). It also features a LED indicator system to visually alert users about different environmental conditions.
+# 🌡️ DHT11 OLED Environmental Monitor
 
-💡 This project is great for:
+A simple and aesthetic Arduino project that reads **temperature** and **humidity** using the DHT11 sensor, displays the values on an **OLED screen**, and uses **LED indicators** to show the environment status (Cold, Hot, Humid, Dry, or Ideal).
 
-Beginner Arduino learners
+![OLED Demo](images/oled_demo.jpg)
 
-Real-time sensor monitoring
+---
 
-Mini IoT environmental stations
+## 📸 Video Demo
 
-DIY hobby or educational demos
+<video src="videos/demo.mp4" controls width="600">
+  Your browser does not support the video tag.
+</video>
 
-🧠 What It Does
-📊 Reads humidity and temperature from the DHT11 sensor.
+> 📌 *If video doesn’t load, [click here to watch on YouTube](https://youtu.be/your_video_id)*
 
-🖥️ Displays live readings on an OLED display (128x64 via I2C).
+---
 
-🚦 Triggers LED indicators based on environmental condition ranges:
+## 🔧 Features
 
-🟢 Green = Ideal
+- 📲 Real-time temperature & humidity monitoring
+- 🖥️ OLED display with environmental status
+- 🚦 LED alerts:
+  - 🟢 Green = Ideal
+  - 🔴 Red = Alert (Temp/Humidity issue)
+  - ⚠️ Blue = Unusual condition
+- 🔁 Continuous looping with error handling
+- 📦 Clean, modular structure using a custom `.h` file
 
-🔴 Red = Alert (Cold/Hot/Dry/Humid)
+---
 
-⚠️ Blue or any custom color = Unusual
+## 🛠️ Wiring Diagram
 
-⚙️ How It Works (Code Summary)
-The OLEDSetup() function:
+| Component    | Pin       |
+|--------------|-----------|
+| DHT11 VCC    | 5V        |
+| DHT11 GND    | GND       |
+| DHT11 DATA   | D11       |
+| OLED VCC     | 3.3V or 5V|
+| OLED GND     | GND       |
+| OLED SDA     | A4        |
+| OLED SCL     | A5        |
+| LED_GREEN    | D7        |
+| LED_RED      | D3        |
+| LED_BLUE     | D2        |
 
-Initializes serial, OLED, DHT sensor, and LED pins.
+> Note: Replace color LED pins based on your LED configuration.
 
-Displays a welcome message.
+---
 
-The OLEDLoop() function:
+## 📦 Libraries Used
 
-Reads temperature and humidity values.
+Make sure you install these in the Arduino IDE:
 
-Handles sensor errors (like NaN values).
+- [`Adafruit_SSD1306`](https://github.com/adafruit/Adafruit_SSD1306)
+- [`Adafruit_GFX`](https://github.com/adafruit/Adafruit-GFX-Library)
+- [`DHT Sensor Library`](https://github.com/adafruit/DHT-sensor-library)
 
-Displays current readings.
+---
 
-Determines environment status with if-else logic.
-
-Lights up corresponding LED.
-
-cpp
-Copy
-Edit
-if (t < 18 && h < 40) {
-  display.println("Cold & Dry");
-  digitalWrite(LED_ALERT, HIGH);
-}
-All logic is neatly modularized in a custom header file: OLEDwDHT11.h.
+## 📁 Project Structure
 
