@@ -1,7 +1,7 @@
 # 🌡️ DHT11 OLED Environmental Monitor
 
 A simple and aesthetic Arduino project that reads **temperature** and **humidity** using the DHT11 sensor, displays the values on an **OLED screen**, and uses **LED indicators** to show the environment status (Cold, Hot, Humid, Dry, or Ideal).
-
+![image alt](https://github.com/kianseng40833/DHT11-OLED-Environmental-Monitor/blob/main/Video%20and%20Image/Demo%20Img.jpg?raw=true)
 ---
 
 ## 📸 Video Demo
