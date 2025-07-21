@@ -10,7 +10,8 @@ A simple and aesthetic Arduino project that reads **temperature** and **humidity
 
 https://github.com/user-attachments/assets/bbca2d20-ced9-41d3-8270-c62042b1936a
 
-> 📌 *If video doesn’t load, [click here to watch on YouTube]([https://youtu.be/your_video_id](https://youtube.com/shorts/rGVSJmokvX0?feature=share))*
+📌 *If video doesn’t load, [click here to watch on YouTube](https://youtube.com/shorts/rGVSJmokvX0?feature=share)*
+
 
 ---
 
