@@ -70,6 +70,8 @@ void OLEDLoop(){
     display.setTextSize(2);
     display.print("T: "); display.print(t); display.println(" C");
     display.print("H: "); display.print(h); display.println(" %");
+    Serial.print("T: "); Serial.print(t); Serial.println(" C");
+    Serial.print("H: "); Serial.print(h); Serial.println(" %");
     display.display();
 
     display.setTextSize(2);
@@ -77,33 +79,43 @@ void OLEDLoop(){
   // Condition Logic
     if (t < 18 && h < 40) {
         display.println("Cold & Dry");
+        Serial.println("Cold & Dry");
         digitalWrite(LED_ALERT, HIGH);
     } else if (t < 18 && h >= 40 && h <= 60) {
         display.println("Cold & Moderate");
+        Serial.println("Cold & Moderate");
         digitalWrite(LED_ALERT, HIGH);
     } else if (t < 18 && h > 60) {
         display.println("Cold & Humid");
+        Serial.println("Cold & Humid");
         digitalWrite(LED_ALERT, HIGH);
     } else if (t >= 18 && t <= 28 && h >= 40 && h <= 60) {
         display.println("Ideal");
+        Serial.println("Ideal");
         digitalWrite(LED_GOOD, HIGH);
     } else if (t >= 18 && t <= 28 && h < 40) {
         display.println("Cool & Dry");
+        Serial.println("Cool & Dry");
         digitalWrite(LED_ALERT, HIGH);
     } else if (t >= 18 && t <= 28 && h > 60) {
         display.println("Cool & Humid");
+        Serial.println("Cool & Humid");
         digitalWrite(LED_ALERT, HIGH);
     } else if (t > 28 && h < 40) {
         display.println("Hot & Dry");
+        Serial.println("Hot & Dry");
         digitalWrite(LED_ALERT, HIGH);
     } else if (t > 28 && h >= 40 && h <= 60) {
         display.println("Hot & Moderate");
+        Serial.println("Hot & Moderate");
         digitalWrite(LED_ALERT, HIGH);
     } else if (t > 28 && h > 60) {
         display.println("Hot & Humid");
+        Serial.println("Hot & Humid");
         digitalWrite(LED_ALERT, HIGH);
     } else {
         display.println("Unusual!");
+        Serial.println("Unusual!");
         digitalWrite(LED_DANGER, HIGH);
     }
 
