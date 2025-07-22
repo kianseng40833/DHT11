@@ -24,7 +24,7 @@ void OLEDSetup(){
     Serial.println("Test");
 
     if (!display.begin(SSD1306_SWITCHCAPVCC, 0x3C)) {
-        Serial.println("Something very longgg");
+        Serial.println("OLED initialization failed.");
         while(true);
     }
     
